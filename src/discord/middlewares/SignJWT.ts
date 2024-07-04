@@ -7,7 +7,7 @@ export default createMiddleware<{ jwt: string }, CommandContext<{}, 'DeferReply'
 
     const { interaction } = data.context;
 
-    const jwt = sign({ channelId: interaction.channelId, guildId: interaction.guildId, messageId: response.id, messageURL: response.url }, process.env.JWT_SECRET!, { expiresIn: '10min', allowInsecureKeySizes: true });
+    const jwt = sign({ channelId: interaction.channelId, guildId: interaction.guildId, messageId: response.id, messageURL: response.url }, process.env.JWT_SECRET!, { expiresIn: '10min' });
 
     return data.next({ jwt });
 })

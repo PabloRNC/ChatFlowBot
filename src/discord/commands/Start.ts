@@ -16,7 +16,7 @@ export default class extends Command {
 
         const embed = new Embed()
         .setTitle('Start Twitch Community')
-        .setDescription(`Click [this link](${url}) to start the Twitch Community setup by authorizing with your Twitch account.`)
+        .setDescription(`Click [this link](${url}) to start the **Twitch Community** setup by authorizing with your **Twitch account**.`)
         .setURL(url)
         .addFields({
             name: 'Status',

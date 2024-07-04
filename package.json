@@ -16,9 +16,9 @@
   "license": "ISC",
   "dependencies": {
     "@biomejs/biome": "^1.8.3",
-    "@twitchfy/chatbot": "^1.0.13",
-    "@twitchfy/eventsub": "^1.0.9",
-    "@twitchfy/helix": "^1.0.5",
+    "@twitchfy/chatbot": "^1.0.14",
+    "@twitchfy/eventsub": "^1.0.10",
+    "@twitchfy/helix": "^1.0.6",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",

@@ -12,14 +12,14 @@ importers:
         specifier: ^1.8.3
         version: 1.8.3
       '@twitchfy/chatbot':
-        specifier: ^1.0.13
-        version: 1.0.13
+        specifier: ^1.0.14
+        version: 1.0.14
       '@twitchfy/eventsub':
-        specifier: ^1.0.9
-        version: 1.0.9
+        specifier: ^1.0.10
+        version: 1.0.10
       '@twitchfy/helix':
-        specifier: ^1.0.5
-        version: 1.0.5
+        specifier: ^1.0.6
+        version: 1.0.6
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
@@ -122,14 +122,14 @@ packages:
   '@twitchfy/api-types@1.0.3':
     resolution: {integrity: sha512-9c0xI6wrMgg4DPCjYJlTAJGkvSnJAeejAs4X05xqXH1MOlKHFDoH9FgcN1Ip3vjVSk7QULgi8YFyej4SaJfKNA==}
 
-  '@twitchfy/chatbot@1.0.13':
-    resolution: {integrity: sha512-n2cjOzJINarZCryOC7LFqWksblzPMljTlgn6O8dG/7YUjaDhJRFS+mT4YDgJrbGihBumenALWaL648bJxlfB4Q==}
+  '@twitchfy/chatbot@1.0.14':
+    resolution: {integrity: sha512-83A80Y0riTS6zM9XE9jQ10Zo32Ece2yM1vGjTMkSWtx9/NnYzXQB1iQqH1Ek/1rqjh3BcikRqYbfbGnoI0pk8g==}
 
-  '@twitchfy/eventsub@1.0.9':
-    resolution: {integrity: sha512-TEhRxBXgMu7T3msBX4d2LjIFxqpwIlPPjVSaPhmO/txaEU0RgdSScNHi1ltFwYoPQRkChe/iMwtCZXJWtY8gQw==}
+  '@twitchfy/eventsub@1.0.10':
+    resolution: {integrity: sha512-aHvVCYPaMvSK53eQUf2FsxWF/7vIZuJqB5gM5cgimXrxOsmQwDDUiYF2UrzdpHoSeFZZrerUHgOhofVhNVRc1A==}
 
-  '@twitchfy/helix@1.0.5':
-    resolution: {integrity: sha512-ZuXCcsDr5W1gBUt0GjY2gl37lSsRFlEam/8VKI/VVv/4JKS4QbO+aJ7r5lGR3MfVoBms0n3hhwJSMbTXA+41ng==}
+  '@twitchfy/helix@1.0.6':
+    resolution: {integrity: sha512-LwqN/nHsQGIvv9KybsrSbl/tHDBe+AB9ZZ6jRK26yG3phHQDbDUJNqk7qQvS5X+ryhfXP3+HPZ7goLhPBLD5Mg==}
 
   '@types/body-parser@1.19.5':
     resolution: {integrity: sha512-fB3Zu92ucau0iQ0JMCFQE7b/dv8Ot07NI3KaZIkIUNXq82k4eBAqUaneXfleGY9JWskeS9y+u0nXMyspcuQrCg==}
@@ -923,11 +923,11 @@ snapshots:
 
   '@twitchfy/api-types@1.0.3': {}
 
-  '@twitchfy/chatbot@1.0.13':
+  '@twitchfy/chatbot@1.0.14':
     dependencies:
       '@twitchfy/api-types': 1.0.3
-      '@twitchfy/eventsub': 1.0.9
-      '@twitchfy/helix': 1.0.5
+      '@twitchfy/eventsub': 1.0.10
+      '@twitchfy/helix': 1.0.6
     transitivePeerDependencies:
       - '@aws-sdk/credential-providers'
       - '@mongodb-js/zstd'
@@ -938,10 +938,10 @@ snapshots:
       - socks
       - supports-color
 
-  '@twitchfy/eventsub@1.0.9':
+  '@twitchfy/eventsub@1.0.10':
     dependencies:
       '@twitchfy/api-types': 1.0.3
-      '@twitchfy/helix': 1.0.5
+      '@twitchfy/helix': 1.0.6
       '@vladfrangu/async_event_emitter': 2.4.1
       websocket: 1.0.35
     optionalDependencies:
@@ -957,7 +957,7 @@ snapshots:
       - socks
       - supports-color
 
-  '@twitchfy/helix@1.0.5':
+  '@twitchfy/helix@1.0.6':
     dependencies:
       '@twitchfy/api-types': 1.0.3
 
