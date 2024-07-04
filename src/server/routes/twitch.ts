@@ -20,7 +20,7 @@ router.get('/redirect', async(req, res) => {
 
     if (data) return res.status(400).send('Already connected');
 
-    const token = await helix.generateUserToken({ code: req.query.code as string, redirectURI: RedirectURI });
+    const token = await helix.generateUserToken({ code: req.query.code as string, flow: 'code', redirectURI: RedirectURI });
 
     const info = await helix.getUserToken(true, { userToken: token })
 

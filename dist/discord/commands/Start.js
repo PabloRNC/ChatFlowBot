@@ -11,7 +11,6 @@ const utils_1 = require("../utils");
 let default_1 = class extends seyfert_1.Command {
     async run(ctx) {
         const url = (0, utils_1.makeLoginURL)(ctx.metadata.SignJWT.jwt);
-        console.log(url);
         const embed = new seyfert_1.Embed()
             .setTitle('Start Twitch Community')
             .setDescription(`Click [this link](${url}) to start the Twitch Community setup by authorizing with your Twitch account.`)

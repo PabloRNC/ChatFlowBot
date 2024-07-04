@@ -16,7 +16,7 @@ router.get('/redirect', async (req, res) => {
     const data = await models_1.Guilds.findOne({ guildId: payload.guildId });
     if (data)
         return res.status(400).send('Already connected');
-    const token = await __1.helix.generateUserToken({ code: req.query.code, redirectURI: Constants_1.RedirectURI });
+    const token = await __1.helix.generateUserToken({ code: req.query.code, flow: 'code', redirectURI: Constants_1.RedirectURI });
     const info = await __1.helix.getUserToken(true, { userToken: token });
     const user = await __1.helix.getUser(info.user_id, { userToken: token, useTokenType: 'user' });
     await models_1.Guilds.create({
@@ -33,7 +33,7 @@ router.get('/redirect', async (req, res) => {
     });
     const embed = new seyfert_1.Embed()
         .setTitle('Twitch Connected')
-        .setDescription(`You have successfully connected your Twitch account to this server. Welcome ${user.display_name}!`)
+        .setDescription(`You have **successfully** connected your Twitch account to this server. Welcome **${user.display_name}**!`)
         .setColor('Green')
         .addFields({
         name: 'Status',
