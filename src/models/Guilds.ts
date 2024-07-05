@@ -5,8 +5,6 @@ export interface GuildsI {
     guildId: string;
     twitch: {
         userId: string;
-        username: string;
-        displayName: string;
     }
     token: {
         userToken: string;
@@ -18,8 +16,6 @@ const GuildsSchema = new Schema<GuildsI>({
     guildId: String,
     twitch: {
         userId: String,
-        username: String,
-        displayName: String
     },
     token: {
         userToken: String,

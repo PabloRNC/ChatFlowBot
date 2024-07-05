@@ -7,6 +7,8 @@ import { CustomMongoAdapter, getUserToken } from "./util";
 import { TwitchCredentials } from "../models";
 config();
 
+let chatbot: ChatBot<EventSubConnection.Webhook>;
+
 export async function initChatBot(server: Express, db: Mongoose) {
 
     const { TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET, TWITCH_WEBHOOK_SECRET, TWITCH_URI } = process.env;
@@ -17,7 +19,9 @@ export async function initChatBot(server: Express, db: Mongoose) {
 
     const appToken = await HelixClient.generateAppToken({ clientId: TWITCH_CLIENT_ID, clientSecret: TWITCH_CLIENT_SECRET })
 
-    const chatbot = new ChatBot({
+    console.log(appToken)
+
+    chatbot = new ChatBot({
         clientId: TWITCH_CLIENT_ID,
         clientSecret: TWITCH_CLIENT_SECRET,
         userToken,
@@ -47,3 +51,5 @@ export async function initChatBot(server: Express, db: Mongoose) {
 
     return chatbot;
 }
+
+export { chatbot };

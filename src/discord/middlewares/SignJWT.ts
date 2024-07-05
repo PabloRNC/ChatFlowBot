@@ -1,13 +1,13 @@
 import { sign } from "jsonwebtoken";
 import { CommandContext, createMiddleware } from "seyfert";
 
-export default createMiddleware<{ jwt: string }, CommandContext<{}, 'DeferReply' | 'OnlyOwner'>>(async(data) => {
+export default createMiddleware<{ jwt: string }, CommandContext<{}, 'StartDefer' | 'OnlyOwner'>>(async(data) => {
 
-    const response = data.context.metadata.DeferReply.response;
+    const response = data.context.metadata.StartDefer.response;
 
     const { interaction } = data.context;
 
-    const jwt = sign({ channelId: interaction.channelId, guildId: interaction.guildId, messageId: response.id, messageURL: response.url }, process.env.JWT_SECRET!, { expiresIn: '10min' });
+    const jwt = sign({ channelId: interaction.channelId, guildId: interaction.guildId, messageId: response.id, messageURL: response.url, interactionToken: data.context.interaction.token }, process.env.JWT_SECRET!, { expiresIn: '10min' });
 
     return data.next({ jwt });
 })

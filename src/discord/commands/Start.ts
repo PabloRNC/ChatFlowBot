@@ -7,10 +7,10 @@ import { makeLoginURL } from "../utils";
     description: 'Starts a Twitch Community inside this Discord Guild'
 })
 
-@Middlewares(['OnlyOwner', 'DeferReply', 'SignJWT'])
+@Middlewares(['StartDefer', 'OnlyOwner', 'SignJWT'])
 
 export default class extends Command {
-    async run(ctx: CommandContext<{}, 'DeferReply' | 'OnlyOwner' | 'SignJWT'>) {
+    async run(ctx: CommandContext<{}, 'StartDefer' | 'OnlyOwner' | 'SignJWT'>) {
     
         const url = makeLoginURL(ctx.metadata.SignJWT.jwt);
 

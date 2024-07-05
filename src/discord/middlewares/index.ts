@@ -1,9 +1,9 @@
 import OnlyOwner from "./OnlyOwner";
-import DeferReply from "./DeferReply";
+import StartDefer from "./StartDefer";
 import SignJWT from "./SignJWT";
 
 export {
     OnlyOwner,
-    DeferReply,
+    StartDefer,
     SignJWT
 }
