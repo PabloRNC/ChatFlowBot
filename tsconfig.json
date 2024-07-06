@@ -26,7 +26,6 @@
         "outDir": "dist"
     },
     "exclude": [
-        "node_modules",
-        "srca"
+        "node_modules"
     ]
 }

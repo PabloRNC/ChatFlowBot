@@ -1,5 +1,4 @@
 import express from "express";
-import localtunnel from "localtunnel";
 
 export async function initServer(){
 
@@ -11,9 +10,7 @@ export async function initServer(){
 
     app.use('/twitch', (await import('./routes/twitch')).default)
 
-    app.listen(8080);
-
-    await localtunnel({ port: 8080, subdomain: 'chatflowbot' })
+    app.listen(3333);
 
     return app;
 }

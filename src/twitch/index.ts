@@ -19,8 +19,6 @@ export async function initChatBot(server: Express, db: Mongoose) {
 
     const appToken = await HelixClient.generateAppToken({ clientId: TWITCH_CLIENT_ID, clientSecret: TWITCH_CLIENT_SECRET })
 
-    console.log(appToken)
-
     chatbot = new ChatBot({
         clientId: TWITCH_CLIENT_ID,
         clientSecret: TWITCH_CLIENT_SECRET,
