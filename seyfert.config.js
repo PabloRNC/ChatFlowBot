@@ -12,9 +12,7 @@ module.exports = config.bot({
 	},
 	token: process.env.DISCORD_CLIENT_TOKEN ?? '',
 	intents: [
-		'Guilds',
-        'GuildMessages',
-        'GuildMembers',
+		'Guilds'
 	],
 	debug: false,
 });
