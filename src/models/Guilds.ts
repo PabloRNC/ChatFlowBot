@@ -6,7 +6,7 @@ export interface GuildsI {
         channelId: string;
         message: string;
         notify: boolean;
-        roleId: string;
+        roleId: string | null;
     };
     token: { userToken: string; refreshToken: string };
     twitch: { userId: string };
@@ -19,10 +19,10 @@ const GuildsSchema = new Schema<GuildsI>({
         message: {
             type: String,
             default:
-                "**{streamer}** is live streaming right now on Twitch!\n{url} @everyone",
+                "**{streamer}** is live streaming right now on Twitch!\n{url}",
         },
         notify: { type: Boolean, default: false },
-        roleId: { type: String, default: "@everyone" },
+        roleId: { type: String, default: null },
     },
     token: { userToken: String, refreshToken: String },
     twitch: { userId: String },
