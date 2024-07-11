@@ -3,6 +3,7 @@ import {
     Declare,
     Embed,
     Group,
+    Options,
     SubCommand,
     type CommandContext,
 } from "seyfert";
@@ -11,16 +12,17 @@ import { MessageFlags } from "seyfert/lib/types";
 import { Guilds } from "../../../../models/Guilds";
 
 const options = {
-    roleMention: createRoleOption({
+    role: createRoleOption({
         description: "Sets a role to be mentioned in the live stream.",
     }),
 };
 
 @Declare({ name: "enable", description: "Enable Twitch notifications." })
+@Options(options)
 @Group("streams")
 export default class ChannelCommand extends SubCommand {
     async run(context: CommandContext<typeof options>) {
-        const { roleMention } = context.options;
+        const { role } = context.options;
         const updateData: any = { "streams.notify": true };
 
         const embed = new Embed()
@@ -28,12 +30,12 @@ export default class ChannelCommand extends SubCommand {
             .setTitle("Changes made!")
             .setDescription("Notifications were enabled for live streams.");
 
-        if (roleMention) {
-            updateData["streams.roleId"] = roleMention.id;
+        if (role) {
+            updateData["streams.roleId"] = role.id;
 
             embed.addFields({
                 name: "Role has been saved for live streaming.",
-                value: `${roleMention}`,
+                value: `${role}`,
             });
         }
 

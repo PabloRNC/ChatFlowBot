@@ -59,7 +59,7 @@ export default createEvent({
             .setFooter({ text: "© 2024 ChatFlowBot. All rights reserved." });
 
         await client.messages.write(streams.channelId, {
-            content: streams.roleMention,
+            content: `<@&${streams.roleId}>`,
             embeds: [embed],
         });
     },
