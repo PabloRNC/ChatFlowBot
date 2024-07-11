@@ -29,7 +29,10 @@ export default createEvent({
     event: "StreamOnline",
 
     run: async (_chatbot, streamData) => {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4fa92c9dd87cad100d6f0bd3808f1d61c978b0e4
         const data = await Guilds.findOne({
             "twitch.userId": streamData.broadcasterId,
         });
@@ -42,8 +45,11 @@ export default createEvent({
 
         const { streams } = data;
 
+<<<<<<< HEAD
         if(!streams.notify) return;
 
+=======
+>>>>>>> 4fa92c9dd87cad100d6f0bd3808f1d61c978b0e4
         let stream = await streamData.broadcaster.stream();
         while (!stream) {
             stream = await streamData.broadcaster.stream();
@@ -62,7 +68,11 @@ export default createEvent({
             .setFooter({ text: "© 2024 ChatFlowBot. All rights reserved." });
 
         await client.messages.write(streams.channelId, {
+<<<<<<< HEAD
             content: `${streams.roleId ? `<@&${streams.roleId}>` : '@everyone'}`,
+=======
+            content: `<@&${streams.roleId}>`,
+>>>>>>> 4fa92c9dd87cad100d6f0bd3808f1d61c978b0e4
             embeds: [embed],
         });
     },
