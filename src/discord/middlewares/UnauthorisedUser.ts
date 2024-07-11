@@ -5,7 +5,7 @@ import { Guilds } from "../../models/Guilds";
 
 export default createMiddleware<void>(async (data) => {
     const guild = data.context.guild();
-    const databaseData = await Guilds.findOne({ guildId: guild?.id });
+    const databaseData = await Guilds.exists({ guildId: guild?.id });
 
     if (!databaseData) {
         return data.context.editOrReply({

@@ -7,6 +7,7 @@ import {
     type CommandContext,
 } from "seyfert";
 
+import { MessageFlags } from "seyfert/lib/types";
 import { Guilds } from "../../../../models/Guilds";
 
 const options = {
@@ -34,6 +35,7 @@ export default class ChannelCommand extends SubCommand {
 
         await context.editOrReply({
             content: `The channel ${channel.toString} has been correctly saved for alerts.`,
+            flags: MessageFlags.Ephemeral,
         });
     }
 }

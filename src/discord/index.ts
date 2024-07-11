@@ -16,7 +16,6 @@ export async function initDiscordBot(
     await client.start();
     await client.uploadCommands();
 
-    console.log("HOLA?");
     return client;
 }
 

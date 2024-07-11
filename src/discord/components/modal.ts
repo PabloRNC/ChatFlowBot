@@ -1,5 +1,7 @@
 import { Embed, ModalCommand, type ModalContext } from "seyfert";
+
 import { Guilds } from "../../models/Guilds";
+import { MessageFlags } from "seyfert/lib/types";
 
 export default class MyModal extends ModalCommand {
     filter(context: ModalContext) {
@@ -26,6 +28,9 @@ export default class MyModal extends ModalCommand {
                 value: `> ${live.replaceAll("{nl}", "\n> ")}`,
             });
 
-        await context.editOrReply({ embeds: [embed] });
+        await context.editOrReply({
+            embeds: [embed],
+            flags: MessageFlags.Ephemeral,
+        });
     }
 }

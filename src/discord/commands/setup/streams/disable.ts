@@ -1,10 +1,9 @@
 import { Declare, Group, SubCommand, type CommandContext } from "seyfert";
+
+import { MessageFlags } from "seyfert/lib/types";
 import { Guilds } from "../../../../models/Guilds";
 
-@Declare({
-    name: "disable",
-    description: "Disable Twitch notifications.",
-})
+@Declare({ name: "disable", description: "Disable Twitch notifications." })
 @Group("streams")
 export default class ChannelCommand extends SubCommand {
     async run(context: CommandContext) {
@@ -15,16 +14,11 @@ export default class ChannelCommand extends SubCommand {
         );
 
         const profile = context.chatbot.profiles.get(data?.twitch.userId!);
-
-        if (profile) {
-            await profile.removeEvent("StreamOffline");
-            await profile.removeEvent("StreamOnline");
-        }
+        if (profile) await profile.removeEvent("StreamOnline");
 
         await context.editOrReply({
-            content: profile
-                ? "Notifications disable for Twitch live streams."
-                : "There is no profile created on Twitch.",
+            content: "Notifications were disabled for live streams.",
+            flags: MessageFlags.Ephemeral,
         });
     }
 }

@@ -34,34 +34,33 @@ export default createEvent({
         });
 
         if (!data) {
-            return console.log(
-                `Se ha producido un comportamiento inesperado. ID DE USUARIO: ${streamData.broadcasterId}`
+            throw new Error(
+                `USER ID: ${streamData.broadcasterId}. Unexpected behaviour has occurred.`
             );
         }
+
+        const { streams } = data;
 
         let stream = await streamData.broadcaster.stream();
         while (!stream) {
             stream = await streamData.broadcaster.stream();
-            await new Promise((resolve) => setTimeout(resolve, 15000));
+            await new Promise((resolve) => setTimeout(resolve, 1000));
         }
 
         const embed = new Embed().setColor("#9146ff");
         const url = `https://www.twitch.tv/${stream.broadcaster.username}`;
 
-        if (stream.title) {
-            embed.setTitle(escape(stream.title)).setURL(url);
-        }
+        if (stream.title) embed.setTitle(escape(stream.title)).setURL(url);
 
         embed
             .setAuthor({ name: stream.broadcaster.displayName })
+            .setDescription(content(stream, streams.message, url))
             .setImage(stream.thumbnailURL({ height: 1536, width: 2048 }))
             .setFooter({ text: "© 2024 ChatFlowBot. All rights reserved." });
 
-        const message = await client.messages.write(data.streams.channelId, {
-            content: content(stream, data.streams.message, url),
+        await client.messages.write(streams.channelId, {
+            content: streams.roleMention,
             embeds: [embed],
         });
-
-        await message.crosspost();
     },
 });
