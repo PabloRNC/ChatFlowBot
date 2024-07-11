@@ -1,13 +1,17 @@
 import { model, Schema } from "mongoose";
 
 export interface TwitchCredentialsI {
-    userToken: string;
     refreshToken: string;
+    userToken: string;
 }
 
 const TwitchCredentialsSchema = new Schema<TwitchCredentialsI>({
+    refreshToken: String,
     userToken: String,
-    refreshToken: String
 });
 
-export const TwitchCredentials = model<TwitchCredentialsI>("credentials", TwitchCredentialsSchema);
+export const TwitchCredentials = model<TwitchCredentialsI>(
+    "credentials",
+    TwitchCredentialsSchema
+);
+
