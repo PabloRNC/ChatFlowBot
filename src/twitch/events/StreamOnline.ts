@@ -29,6 +29,7 @@ export default createEvent({
     event: "StreamOnline",
 
     run: async (_chatbot, streamData) => {
+
         const data = await Guilds.findOne({
             "twitch.userId": streamData.broadcasterId,
         });
@@ -40,6 +41,8 @@ export default createEvent({
         }
 
         const { streams } = data;
+
+        if(!streams.notify) return;
 
         let stream = await streamData.broadcaster.stream();
         while (!stream) {
