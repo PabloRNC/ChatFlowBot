@@ -62,7 +62,7 @@ export default createEvent({
             .setFooter({ text: "© 2024 ChatFlowBot. All rights reserved." });
 
         await client.messages.write(streams.channelId, {
-            content: `<@&${streams.roleId || data.guildId}>`,
+            content: `${streams.roleId ? `<@&${streams.roleId}>` : '@everyone'}`,
             embeds: [embed],
         });
     },

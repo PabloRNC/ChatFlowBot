@@ -3,10 +3,10 @@ import { Declare, Group, SubCommand, type CommandContext } from "seyfert";
 import { MessageFlags } from "seyfert/lib/types";
 import { Guilds } from "../../../../models/Guilds";
 
-@Declare({ name: "disable", description: "Disable Twitch notifications." })
+@Declare({ name: "disable", description: "Disable live stream notifications." })
 @Group("streams")
 export default class ChannelCommand extends SubCommand {
-    async run(context: CommandContext) {
+    async run(context: CommandContext<{}, 'UnauthorisedUser'>) {
         const data = await Guilds.findOneAndUpdate(
             { guildId: context.guildId },
             { $set: { "streams.notify": false } },

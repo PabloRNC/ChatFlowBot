@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { decode } from "jsonwebtoken";
+import { verify } from "jsonwebtoken";
 import { Embed } from "seyfert";
 import { Guilds } from "../../models";
 import { RedirectURI } from "../../Constants";
@@ -14,14 +14,21 @@ router.get("/redirect", async (req, res) => {
 
     if (!jwt) return res.status(400).send("Missing state");
 
-    const payload = decode(jwt as string) as {
-        channelId: string;
-        messageId: string;
-        guildId: string;
-        messageURL: string;
-        interactionToken: string;
-    };
+    let payload;
 
+    try {
+        payload = verify(jwt as string, process.env.JWT_SECRET) as {
+            channelId: string;
+            messageId: string;
+            guildId: string;
+            messageURL: string;
+            interactionToken: string;
+        };
+    } catch(err) {
+        if((err as Error).name === "TokenExpiredError") return res.status(400).send("You must complete the connection within 10 minutes.");
+        return res.status(400).send((err as Error).message);
+    }
+    
     const data = await Guilds.findOne({ guildId: payload.guildId });
 
     if (data) return res.status(400).send("Already connected");

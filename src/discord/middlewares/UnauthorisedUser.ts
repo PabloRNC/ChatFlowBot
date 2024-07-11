@@ -1,18 +1,18 @@
 import { createMiddleware } from "seyfert";
 import { MessageFlags } from "seyfert/lib/types";
+import { Document } from "mongoose";
+import { Guilds, GuildsI } from "../../models/Guilds";
 
-import { Guilds } from "../../models/Guilds";
+export default createMiddleware<{ identity: Document<unknown, {}, GuildsI> }>(async (data) => {
 
-export default createMiddleware<void>(async (data) => {
-    const guild = data.context.guild();
-    const databaseData = await Guilds.exists({ guildId: guild?.id });
+    const identity = await Guilds.findOne({ guildId: data.context.guildId });
 
-    if (!databaseData) {
+    if (!identity) {
         return data.context.editOrReply({
             content: "You must authorize your identity to use this command.",
             flags: MessageFlags.Ephemeral,
         });
     }
 
-    data.next();
+    data.next({ identity });
 });

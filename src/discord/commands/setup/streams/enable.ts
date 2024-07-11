@@ -21,8 +21,11 @@ const options = {
 @Options(options)
 @Group("streams")
 export default class ChannelCommand extends SubCommand {
-    async run(context: CommandContext<typeof options>) {
+    async run(context: CommandContext<typeof options, 'UnauthorisedUser'>) {
         const { role } = context.options;
+
+        if(!await Guilds.countDocuments({ 'streams.channelId': { $ne: null } })) return context.editOrReply({ content: "You must set a channel first!", flags: MessageFlags.Ephemeral })
+
         const updateData: any = { "streams.notify": true };
 
         const embed = new Embed()
@@ -35,7 +38,7 @@ export default class ChannelCommand extends SubCommand {
 
             embed.addFields({
                 name: "Role has been saved for live streaming.",
-                value: `${role}`,
+                value: `<@&${role.id}>`,
             });
         }
 

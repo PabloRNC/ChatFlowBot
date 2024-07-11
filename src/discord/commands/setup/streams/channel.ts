@@ -20,12 +20,12 @@ const options = {
 
 @Declare({
     name: "channel",
-    description: "Sets the channel through which alerts will be sent.",
+    description: "Sets the channel through which live stream notifications will be sent.",
 })
 @Group("streams")
 @Options(options)
 export default class ChannelCommand extends SubCommand {
-    async run(context: CommandContext<typeof options>) {
+    async run(context: CommandContext<typeof options, 'UnauthorisedUser'>) {
         const { channel } = context.options;
 
         await Guilds.updateOne(
@@ -34,7 +34,7 @@ export default class ChannelCommand extends SubCommand {
         );
 
         await context.editOrReply({
-            content: `The channel ${channel.toString()} has been correctly saved for alerts.`,
+            content: `The channel ${channel.toString()} has been correctly saved for live stream notifications.`,
             flags: MessageFlags.Ephemeral,
         });
     }

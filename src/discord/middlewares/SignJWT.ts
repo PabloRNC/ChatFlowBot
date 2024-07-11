@@ -16,7 +16,7 @@ export default createMiddleware<
             interactionToken: data.context.interaction.token,
         },
         process.env.JWT_SECRET!,
-        { expiresIn: "10min" }
+        { expiresIn: "10min", issuer: 'ChatFlowBot', subject: 'login' }
     );
 
     return data.next({ jwt });
