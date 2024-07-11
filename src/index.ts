@@ -1,13 +1,23 @@
+import { config } from "dotenv";
 import { connect } from "mongoose";
 import { HelixClient } from "@twitchfy/helix";
+
 import { initServer } from "./server";
 import { initChatBot } from "./twitch";
 import { initDiscordBot } from "./discord";
-import { config } from "dotenv";
+
 config();
 
+export const helix = new HelixClient({
+    clientId: process.env.TWITCH_CLIENT_ID,
+    clientSecret: process.env.TWITCH_CLIENT_SECRET,
+});
+
 async function main() {
-    const db = await connect(process.env.MONGODB_URI);
+    const db = await connect(process.env.MONGODB_URI, {
+        dbName: "ChatFlowBot",
+    });
+
     console.log("Connected to MongoDB");
     const server = await initServer();
     console.log("Server is running");
@@ -19,4 +29,3 @@ async function main() {
 
 main();
 
-export const helix = new HelixClient({ clientId: process.env.TWITCH_CLIENT_ID, clientSecret: process.env.TWITCH_CLIENT_SECRET });

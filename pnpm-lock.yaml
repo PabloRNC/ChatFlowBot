@@ -12,8 +12,8 @@ importers:
         specifier: ^1.8.3
         version: 1.8.3
       '@twitchfy/chatbot':
-        specifier: ^1.0.14
-        version: 1.0.14
+        specifier: ^1.0.16
+        version: 1.0.16
       '@twitchfy/eventsub':
         specifier: ^1.0.10
         version: 1.0.10
@@ -30,8 +30,8 @@ importers:
         specifier: ^9.0.2
         version: 9.0.2
       mongoose:
-        specifier: ^8.4.4
-        version: 8.4.4
+        specifier: ^8.5.0
+        version: 8.5.0
       seyfert:
         specifier: ^1.5.0
         version: 1.5.0(bufferutil@4.0.8)(utf-8-validate@5.0.10)
@@ -43,8 +43,8 @@ importers:
         specifier: ^9.0.6
         version: 9.0.6
       '@types/node':
-        specifier: ^20.14.9
-        version: 20.14.9
+        specifier: ^20.14.10
+        version: 20.14.10
       nodemon:
         specifier: ^3.1.4
         version: 3.1.4
@@ -116,8 +116,8 @@ packages:
   '@twitchfy/api-types@1.0.3':
     resolution: {integrity: sha512-9c0xI6wrMgg4DPCjYJlTAJGkvSnJAeejAs4X05xqXH1MOlKHFDoH9FgcN1Ip3vjVSk7QULgi8YFyej4SaJfKNA==}
 
-  '@twitchfy/chatbot@1.0.14':
-    resolution: {integrity: sha512-83A80Y0riTS6zM9XE9jQ10Zo32Ece2yM1vGjTMkSWtx9/NnYzXQB1iQqH1Ek/1rqjh3BcikRqYbfbGnoI0pk8g==}
+  '@twitchfy/chatbot@1.0.16':
+    resolution: {integrity: sha512-uZkOT0yjLjHkpNXXjYfPutmbrBKXQwpW1Y2FghqZxrQAH5dMKy3RmTiMa8oFWMo9UPffVprpSXp46mLK9u6uYw==}
 
   '@twitchfy/eventsub@1.0.10':
     resolution: {integrity: sha512-aHvVCYPaMvSK53eQUf2FsxWF/7vIZuJqB5gM5cgimXrxOsmQwDDUiYF2UrzdpHoSeFZZrerUHgOhofVhNVRc1A==}
@@ -146,8 +146,8 @@ packages:
   '@types/mime@1.3.5':
     resolution: {integrity: sha512-/pyBZWSLD2n0dcHE3hq8s8ZvcETHtEuF+3E7XVt0Ig2nvsVQXdghHVcEkIWjy9A0wKfTn97a/PSDYohKIlnP/w==}
 
-  '@types/node@20.14.9':
-    resolution: {integrity: sha512-06OCtnTXtWOZBJlRApleWndH4JsRVs1pDCc8dLSQp+7PpUpX3ePdHyeNSFTeSe7FtKyQkrlPvHwJOW3SLd8Oyg==}
+  '@types/node@20.14.10':
+    resolution: {integrity: sha512-MdiXf+nDuMvY0gJKxyfZ7/6UFsETO7mGKF54MVD/ekJS6HdFtpZFBgrh6Pseu64XTb2MLyFPlbW6hj8HYRQNOQ==}
 
   '@types/qs@6.9.15':
     resolution: {integrity: sha512-uXHQKES6DQKKCLh441Xv/dwxOq1TVS3JPUMlEqoEglvlhR6Mxnlew/Xq/LRVHpLyk7iK3zODe1qYHIMltO7XGg==}
@@ -511,8 +511,8 @@ packages:
   mongodb-connection-string-url@3.0.1:
     resolution: {integrity: sha512-XqMGwRX0Lgn05TDB4PyG2h2kKO/FfWJyCzYQbIhXUxz7ETt0I/FqHjUeqj37irJ+Dl1ZtU82uYyj14u2XsZKfg==}
 
-  mongodb@6.6.2:
-    resolution: {integrity: sha512-ZF9Ugo2JCG/GfR7DEb4ypfyJJyiKbg5qBYKRintebj8+DNS33CyGMkWbrS9lara+u+h+yEOGSRiLhFO/g1s1aw==}
+  mongodb@6.7.0:
+    resolution: {integrity: sha512-TMKyHdtMcO0fYBNORiYdmM25ijsHs+Njs963r4Tro4OQZzqYigAzYQouwWRg4OIaiLRUEGUh/1UAcH5lxdSLIA==}
     engines: {node: '>=16.20.1'}
     peerDependencies:
       '@aws-sdk/credential-providers': ^3.188.0
@@ -538,8 +538,8 @@ packages:
       socks:
         optional: true
 
-  mongoose@8.4.4:
-    resolution: {integrity: sha512-Nya808odIJoHP4JuJKbWA2eIaerXieu59kE8pQlvJpUBoSKWUyhLji0g1WMVaYXWmzPYXP2Jd6XdR4KJE8RELw==}
+  mongoose@8.5.0:
+    resolution: {integrity: sha512-iGgZvgO+fIgX1AQMehkG+Wj8qrWc9it8vUZrSKWjrebgfwHTqUcIdTgWK8mT1us1xd83NOQxiuGbg9ZJtLxs2Q==}
     engines: {node: '>=16.20.1'}
 
   mpath@0.9.0:
@@ -724,10 +724,6 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  uWebSockets.js@https://codeload.github.com/uNetworking/uWebSockets.js/tar.gz/f40213ec0a97d0d8721d9d32d92d6eb6ddcd22e7:
-    resolution: {tarball: https://codeload.github.com/uNetworking/uWebSockets.js/tar.gz/f40213ec0a97d0d8721d9d32d92d6eb6ddcd22e7}
-    version: 20.42.0
-
   undefsafe@2.0.5:
     resolution: {integrity: sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==}
 
@@ -824,7 +820,7 @@ snapshots:
 
   '@twitchfy/api-types@1.0.3': {}
 
-  '@twitchfy/chatbot@1.0.14':
+  '@twitchfy/chatbot@1.0.16':
     dependencies:
       '@twitchfy/api-types': 1.0.3
       '@twitchfy/eventsub': 1.0.10
@@ -847,7 +843,7 @@ snapshots:
       websocket: 1.0.35
     optionalDependencies:
       ioredis: 5.4.1
-      mongoose: 8.4.4
+      mongoose: 8.5.0
     transitivePeerDependencies:
       - '@aws-sdk/credential-providers'
       - '@mongodb-js/zstd'
@@ -865,15 +861,15 @@ snapshots:
   '@types/body-parser@1.19.5':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 20.14.9
+      '@types/node': 20.14.10
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 20.14.9
+      '@types/node': 20.14.10
 
   '@types/express-serve-static-core@4.19.5':
     dependencies:
-      '@types/node': 20.14.9
+      '@types/node': 20.14.10
       '@types/qs': 6.9.15
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
@@ -889,11 +885,11 @@ snapshots:
 
   '@types/jsonwebtoken@9.0.6':
     dependencies:
-      '@types/node': 20.14.9
+      '@types/node': 20.14.10
 
   '@types/mime@1.3.5': {}
 
-  '@types/node@20.14.9':
+  '@types/node@20.14.10':
     dependencies:
       undici-types: 5.26.5
 
@@ -904,12 +900,12 @@ snapshots:
   '@types/send@0.17.4':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.14.9
+      '@types/node': 20.14.10
 
   '@types/serve-static@1.15.7':
     dependencies:
       '@types/http-errors': 2.0.4
-      '@types/node': 20.14.9
+      '@types/node': 20.14.10
       '@types/send': 0.17.4
 
   '@types/webidl-conversions@7.0.3': {}
@@ -1302,17 +1298,17 @@ snapshots:
       '@types/whatwg-url': 11.0.5
       whatwg-url: 13.0.0
 
-  mongodb@6.6.2:
+  mongodb@6.7.0:
     dependencies:
       '@mongodb-js/saslprep': 1.1.7
       bson: 6.8.0
       mongodb-connection-string-url: 3.0.1
 
-  mongoose@8.4.4:
+  mongoose@8.5.0:
     dependencies:
       bson: 6.8.0
       kareem: 2.6.3
-      mongodb: 6.6.2
+      mongodb: 6.7.0
       mpath: 0.9.0
       mquery: 5.0.0
       ms: 2.1.3
@@ -1462,7 +1458,6 @@ snapshots:
     optionalDependencies:
       ioredis: 5.4.1
       tweetnacl: 1.0.3
-      uWebSockets.js: https://codeload.github.com/uNetworking/uWebSockets.js/tar.gz/f40213ec0a97d0d8721d9d32d92d6eb6ddcd22e7
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -1523,9 +1518,6 @@ snapshots:
       is-typedarray: 1.0.0
 
   typescript@5.5.3: {}
-
-  uWebSockets.js@https://codeload.github.com/uNetworking/uWebSockets.js/tar.gz/f40213ec0a97d0d8721d9d32d92d6eb6ddcd22e7:
-    optional: true
 
   undefsafe@2.0.5: {}
 
