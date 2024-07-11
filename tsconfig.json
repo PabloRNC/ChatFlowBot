@@ -1,31 +1,30 @@
 {
     "compilerOptions": {
-        "experimentalDecorators": true,
-        "target": "esnext",
-        "module": "CommonJS",
-        "removeComments": true,
-        "esModuleInterop": true,
-        "resolveJsonModule": true,
-        "moduleResolution": "Node",
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": false,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "useUnknownInCatchVariables": true,
-        "noFallthroughCasesInSwitch": true,
-        "strict": true,
         "alwaysStrict": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": false,
+        "module": "CommonJS",
+        "moduleResolution": "Node",
+        "noFallthroughCasesInSwitch": true,
         "noImplicitAny": true,
         "noImplicitThis": true,
-        "strictBindCallApply": true,
-        "strictNullChecks": true,
-        "strictFunctionTypes": true,
-        "strictPropertyInitialization": true,
-        "emitDecoratorMetadata": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "outDir": "dist",
+        "removeComments": true,
+        "resolveJsonModule": true,
         "rootDir": "src",
-        "outDir": "dist"
+        "skipLibCheck": true,
+        "strict": true,
+        "strictBindCallApply": true,
+        "strictFunctionTypes": true,
+        "strictNullChecks": true,
+        "strictPropertyInitialization": true,
+        "target": "esnext",
+        "useUnknownInCatchVariables": true
     },
-    "exclude": [
-        "node_modules"
-    ]
+    "exclude": ["dist", "node_modules"]
 }
+
